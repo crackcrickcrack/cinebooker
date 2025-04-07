@@ -13,4 +13,12 @@ describe('Sample Test Suite', () => {
     it('should multiply two numbers correctly', () => {
         expect(2 * 3).toBe(6);
     });
+    
+    it('should divide two numbers correctly', () => {
+        expect(10 / 2).toBe(5);
+    });
+    
+    it('should handle string concatenation', () => {
+        expect('hello ' + 'world').toBe('hello world');
+    });
 });

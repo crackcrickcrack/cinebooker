@@ -7,8 +7,9 @@ def call() {
     // Install all dependencies including dev dependencies
     sh 'npm ci'
     
-    // Install specific testing tools explicitly to ensure they're available
-    sh 'npm install -D vite vitest @vitest/coverage-v8 eslint typescript typescript-eslint eslint-plugin-react-hooks eslint-plugin-react-refresh'
+    // Install specific testing tools with compatible versions
+    // Using vitest@1.6.1 to match what's already installed in the project
+    sh 'npm install -D vite vitest@1.6.1 @vitest/coverage-v8@1.6.1 eslint @eslint/js typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-react-hooks eslint-plugin-react-refresh'
     
     // Run linting with npx to ensure the local eslint is used
     sh 'npx eslint . || echo "Linting issues found but continuing"'
